@@ -54,7 +54,7 @@ if butt==True:
 
     csv = convert_df(tweets_df)
 
-    st.sidebar.download_button(
+    st.download_button(
         label="Download data as CSV",
         data=csv,
         file_name='tweets.csv',
