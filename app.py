@@ -13,14 +13,9 @@ if start_Date == End_Date:
     st.sidebar.caption("Please select Different Dates")
 
 range=st.sidebar.number_input("Enter the Count of data to extract",0,1000,1)
-val=st.sidebar.title(range)
+# val=st.sidebar.title(range)
 butt=st.sidebar.button("Submit")
-# st.sidebar.download_button(
-#      label="Download data as CSV",
-     # data=csv,
-     # file_name='large_df.csv',
-     # mime='text/csv',
- # )
+
 data_scrap=f'{Searc_Key_Word} since:{start_Date} until:{End_Date}'
 if butt==True:
     st.title("#Tweet's for You")
@@ -49,7 +44,7 @@ if butt==True:
 
         st.write("*"*50)
     tweets_df = pd.DataFrame(tweets_list, columns=['User_Name', 'Tweet', 'Tweet_Url', 'Like_Count', 'Tweet_Date', 'Retweet_Count' ])
-    st.write(tweets_df)
+#     st.write(tweets_df)
 
 
     @st.cache
