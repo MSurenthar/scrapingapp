@@ -1,6 +1,7 @@
 import streamlit as st
 import snscrape.modules.twitter as sns
 import pandas as pd
+import datetime
 
 tweets_list = []
 st.sidebar.image("https://pbs.twimg.com/amplify_video_thumb/1488571141220409349/img/dWUrn3KC7oVNBqgr?format=jpg&name=large")
@@ -15,8 +16,8 @@ if start_Date == End_Date:
 range=st.sidebar.number_input("Enter the Count of data to extract",0,1000,1)
 # val=st.sidebar.title(range)
 butt=st.sidebar.button("Submit")
-
-data_scrap=f'{Searc_Key_Word} since:{start_Date} until:{End_Date}'
+Edate = End_date + datetime.timedelta(days=1)
+data_scrap=f'{Searc_Key_Word} since:{start_Date} until:{Edate}'
 if butt==True:
     st.title("#Tweet's for You")
     for i,tweet in enumerate(sns.TwitterSearchScraper(data_scrap).get_items()):
