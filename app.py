@@ -16,7 +16,7 @@ if start_Date == End_Date:
 range=st.sidebar.number_input("Enter the Count of data to extract",0,1000,1)
 # val=st.sidebar.title(range)
 butt=st.sidebar.button("Submit")
-Edate = End_date + datetime.timedelta(days=1)
+Edate = End_Date + datetime.timedelta(days=1)
 data_scrap=f'{Searc_Key_Word} since:{start_Date} until:{Edate}'
 if butt==True:
     st.title("#Tweet's for You")
